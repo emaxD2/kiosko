@@ -1,0 +1,7 @@
+{
+  "name": "kiosko",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

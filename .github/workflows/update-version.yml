@@ -1,0 +1,35 @@
+name: Update Version
+
+on:
+  push:
+    tags:
+      - 'v*'  # Ejecuta este flujo de trabajo cuando se empuje un tag que empiece con 'v'
+
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Puedes ajustar la versión de Node.js si es necesario
+
+      - name: Update version in update.json
+        run: |
+          # Obtener la versión del tag (sin el prefijo 'v')
+          VERSION=${GITHUB_REF#refs/tags/v}
+
+          # Reemplazar la versión en el archivo update.json
+          jq --arg version "$VERSION" '.version = $version' update.json > tmp.json && mv tmp.json update.json
+
+      - name: Commit updated update.json
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions@github.com"
+          git add update.json
+          git commit -m "Actualizar versión a $VERSION"
+          git push

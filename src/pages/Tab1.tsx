@@ -1,4 +1,4 @@
-import React from 'react';
+import { checkForUpdates } from '../updateService.js';
 import {
   IonContent,
   IonPage,
@@ -15,8 +15,12 @@ import bebida from '../images/cocacola 3d.png';
 import dulces from '../images/dulces3d.png';
 import jugos from '../images/jugo3d.png';
 import { cartOutline } from 'ionicons/icons';
+import { useEffect } from 'react';
 
 const Tab1 = () => {
+  useEffect(() => {
+    checkForUpdates();
+  }, []);
   return (
     <IonPage>
       <IonHeader>

@@ -46,7 +46,7 @@ const Tab1 = () => {
           {/* Div 1 */}
           <div className="div1">
             <div className="text">
-              <div className='tituloCartas'>Cambios recientes</div>
+              <div className='tituloCartas'>Productos Nuevos</div>
               <p className='descripcionCartas'>Este es un breve resumen de los cambios recientes.</p>
             </div>
             <img src={cuaderno} alt="Cuaderno" style={{width: 180}}/>

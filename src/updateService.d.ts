@@ -1,4 +1,4 @@
-declare module '../updateService' {
+declare module './updateService' {
     export function checkForUpdates(): Promise<void>;
   }
   

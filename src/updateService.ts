@@ -21,3 +21,5 @@ export async function checkForUpdates() {
     console.error('Error al verificar actualizaciones:', error);
   }
 }
+
+export default checkForUpdates();

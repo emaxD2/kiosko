@@ -1,2 +1,21 @@
 /* For information on how to create your own theme, please see:
 http://ionicframework.com/docs/theming/ */
+:root {
+    --ion-background-color: #ffffff;
+    --ion-text-color: #000000;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ion-background-color: #ffffff;
+      --ion-text-color: #000000;
+    }
+  }
+  
+  @font-face {
+    font-family: 'Anton'; /* Nombre que usarás en tu CSS */
+    src: url('../assets/fonts/Anton-Regular.ttf') format('truetype'); /* Ruta relativa */
+    font-weight: normal;
+    font-style: normal;
+  }
+  

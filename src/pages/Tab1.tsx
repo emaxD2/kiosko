@@ -1,4 +1,4 @@
-const { checkForUpdates } = require ('../updateService.js');
+import { checkForUpdates } from '../updateService.js';
 import {
   IonContent,
   IonPage,

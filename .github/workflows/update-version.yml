@@ -42,4 +42,4 @@ jobs:
           git checkout main
           git add update.json
           git commit -m "Actualizar versión a $VERSION"
-          git push origin https://x-access-token:${{ secrets.GHPAT }}@github.com/emaxD2/kiosko.git main
+          git push origin https://github.com/emaxD2/kiosko.git${{ secrets.GHPAT }}@github.com/emaxD2/kiosko.git main

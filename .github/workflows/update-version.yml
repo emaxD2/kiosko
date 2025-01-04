@@ -12,15 +12,21 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
         with:
           fetch-depth: 0
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+
       - name: Verificar existencia de update.json
-        run: ls -la && cat update.json || echo "update.json no encontrado"
-        
+        run: ls -la && (cat update.json || echo "update.json no encontrado")
+
+      - name: Crear update.json si no existe
+        run: |
+          if [ ! -f update.json ]; then
+            echo '{"version": "0.0.0", "updateUrl": "https://kiosko-42d08.web.app"}' > update.json
+          fi
+
       - name: Update version in update.json
         run: |
           # Obtener la versión del tag (sin el prefijo 'v')
@@ -36,10 +42,3 @@ jobs:
           git add update.json
           git commit -m "Actualizar versión a $VERSION"
           git push
-      
-      - name: Crear update.json si no existe
-        run: |
-            if [ ! -f update.json ]; then
-              echo '{"version": "0.0.0", "updateUrl": "https://kiosko-42d08.web.app"}' > update.json
-            fi
-        

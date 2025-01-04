@@ -45,7 +45,7 @@ jobs:
           
           # Autenticación con el token de GitHub Actions (no en la URL)
           git config --global credential.helper store
-          echo "https://${GITHUB_TOKEN}:@github.com" > ~/.git-credentials
+          echo "https://${GH_PAT}:@github.com" > ~/.git-credentials
 
           # Realizar el push
           git push https://github.com/emaxD2/kiosko.git main

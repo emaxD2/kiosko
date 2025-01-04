@@ -37,7 +37,7 @@ const Tab1 = () => {
         {/* Cartas estilo carrusel */}
         <figure className='icon-cards'>
           <div className="icon-cards-content">
-            <div className='cards-item' style={{alignItems: 'center'}}>En Contruccion</div>
+            <div className='cards-item' style={{alignItems: 'center'}}>En Proceso Contruccion</div>
             <div className='cards-item' style={{alignItems: 'center'}}>En proceso de ideas frescas</div>
             <div className='cards-item' style={{alignItems: 'center'}}>Tal vez entre datos de dashboard</div>
           </div>

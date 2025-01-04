@@ -48,4 +48,4 @@ jobs:
           echo "https://${GH_PAT}:@github.com" > ~/.git-credentials
 
           # Realizar el push
-          git push https://github.com/emaxD2/kiosko.git main
+          git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/emaxD2/kiosko.git main

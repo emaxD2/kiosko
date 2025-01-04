@@ -39,6 +39,7 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "github-actions@github.com"
+          git checkout main
           git add update.json
           git commit -m "Actualizar versión a $VERSION"
-          git push
+          git push origin main
